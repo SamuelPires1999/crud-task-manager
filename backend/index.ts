@@ -2,10 +2,12 @@ import Express from "express";
 import { logMiddleware } from "./middleware/logger";
 import routes from "./modules/task/router";
 import { db } from "./database/prisma";
+import cors from "cors";
 
 async function main() {
   const app = Express();
   app.use(Express.json());
+  app.use(cors());
 
   app.use(logMiddleware);
 
