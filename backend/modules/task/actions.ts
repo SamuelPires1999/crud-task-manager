@@ -23,3 +23,18 @@ export const find_and_edit_task = async (
 
   return result.id;
 };
+
+export const find_all_tasks = async () => {
+  const results = await db.task.findMany();
+  return results;
+};
+
+export const delete_task = async (id: string) => {
+  const deleted = await db.task.delete({
+    where: {
+      id,
+    },
+  });
+
+  return deleted.id;
+};
