@@ -9,12 +9,12 @@ generator client {
 }
 
 datasource db {
-  provider = "mongodb"
-  url      = "mongodb://localhost:27017/crud-db"
+  provider = "sqlite"
+  url      = "file:./dev.db"
 }
 
 model Task {
-  id          String @id @default(auto()) @map("_id") @db.ObjectId
+  id          String @id @default(uuid())
   title       String
   description String
 }

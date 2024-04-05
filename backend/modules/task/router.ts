@@ -31,7 +31,7 @@ routes.post("/", async (req, res) => {
 
     return res.status(500).send({
       success: false,
-      message: "Unknown server error",
+      error,
     });
   }
 });
