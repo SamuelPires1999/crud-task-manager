@@ -5,6 +5,7 @@ import { db } from "./database/prisma";
 
 async function main() {
   const app = Express();
+  app.use(Express.json());
 
   app.use(logMiddleware);
 
